@@ -57,8 +57,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -392,7 +390,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#skenario">SKENARIO</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-value">Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mempersiapkan-missing-value">Mempersiapkan missing Value</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengumpulkan-data">MENGUMPULKAN DATA</a><ul class="visible nav section-nav flex-column">
@@ -500,137 +498,6 @@ PRIMARY KEY (“Id”)
 <section id="import-iris-csv">
 <h3>Import Iris.csv<a class="headerlink" href="#import-iris-csv" title="Link to this heading">#</a></h3>
 <p>tambahkan data dari csv ke dalam kolom masing masing database</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT &quot;Id&quot;,&quot;SepalLengthCm&quot;,&quot;SepalWidthCm&quot;, &quot;Species&quot; FROM &quot;Iris&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_99F1D1AF_854C_4441_9EAD_3F2D68CEC4E9&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT &quot;Id&quot;,&quot;SepalLengthCm&quot;,&quot;SepalWidthCm&quot;, &quot;Species&quot; FROM &quot;Iris&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_99F1D1AF_854C_4441_9EAD_3F2D68CEC4E9&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;_deepnote_execute_sql&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT &quot;Id&quot;, &quot;PetalLengthCm&quot;, &quot;PetalWidthCm&quot;, &quot;Species&quot; FROM public.&quot;Iris&quot;;&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_8F476C2D_F5DD_4899_9AA3_391C0045883F&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Id</th>
-      <th>PetalLengthCm</th>
-      <th>PetalWidthCm</th>
-      <th>Species</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>148</td>
-      <td>5.2</td>
-      <td>2.0</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>149</td>
-      <td>5.4</td>
-      <td>2.3</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>150</td>
-      <td>5.1</td>
-      <td>1.8</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>115</td>
-      <td>5.1</td>
-      <td>2.4</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>14</td>
-      <td>1.1</td>
-      <td>0.1</td>
-      <td>None</td>
-    </tr>
-  </tbody>
-</table>
-<p>150 rows × 4 columns</p>
-</div></div></div>
-</div>
 </section>
 <section id="tabel-untuk-hasil-prepocessing">
 <h3>Tabel untuk hasil prepocessing<a class="headerlink" href="#tabel-untuk-hasil-prepocessing" title="Link to this heading">#</a></h3>
@@ -650,8 +517,8 @@ PRIMARY KEY (`Id`));
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="skenario">
 <h1>SKENARIO<a class="headerlink" href="#skenario" title="Link to this heading">#</a></h1>
-<section id="missing-value">
-<h2>Missing Value<a class="headerlink" href="#missing-value" title="Link to this heading">#</a></h2>
+<section id="mempersiapkan-missing-value">
+<h2>Mempersiapkan missing Value<a class="headerlink" href="#mempersiapkan-missing-value" title="Link to this heading">#</a></h2>
 <p>Misalkan ada 5 Missing Value dari Column SepalLengthCm, dan dari 5 Data tadi ada 2 Missing Value lagi pada column Species</p>
 <ul class="simple">
 <li><p>Hapus 5 Data random dari Column SepalLength (Dalam Hal ini ada di tabel Mysql)</p></li>
@@ -666,7 +533,7 @@ UPDATE `dataminingmysql`.`Iris` SET `SepalLengthCm` = NULL, `Species` = NULL WHE
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Hapus 2 data dari species Iris-Sentosa, 1 Data dari Iris-versicolor dan 2 data lagi dari Iris-virginica
 </pre></div>
 </div>
-<img src="Img/image-20240310-125712.png" width="" align="" /><img src="Img/image-20240310-125759.png" width="" align="" /><img src="Img/image-20240310-125842.png" width="" align="" /><ul class="simple">
+<img src="Img/image-20240310-125712.png" width="" align="center" /><img src="Img/image-20240310-125759.png" width="" align="center" /><img src="Img/image-20240310-125842.png" width="" align="center" /><ul class="simple">
 <li><p>Hapus 2 Data pada Column Species Dari 5 data yang dipilih sebelumnya (Karena Data species ada pada 2 database, usahakan hapus yang sama antara 2 database tersebut)</p></li>
 </ul>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>UPDATE public.&quot;Iris&quot; SET
@@ -678,7 +545,7 @@ UPDATE public.&quot;Iris&quot; SET
 &quot;Id&quot; = 115;
 </pre></div>
 </div>
-<img src="Img/image-20240310-133736.png" width="" align="" /><img src="Img/image-20240310-130006.png" width="" align="" /></section>
+<img src="Img/image-20240310-133736.png" width="" align="center" /><img src="Img/image-20240310-130006.png" width="" align="center" /></section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="mengumpulkan-data">
 <h1>MENGUMPULKAN DATA<a class="headerlink" href="#mengumpulkan-data" title="Link to this heading">#</a></h1>
@@ -694,112 +561,16 @@ UPDATE public.&quot;Iris&quot; SET
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_Mysql</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM `dataminingmysql`.`Iris` &#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_99F1D1AF_854C_4441_9EAD_3F2D68CEC4E9&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_Mysql</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Id</th>
-      <th>SepalLengthCm</th>
-      <th>SepalWidthCm</th>
-      <th>Species</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>146</td>
-      <td>6.7</td>
-      <td>3.0</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>147</td>
-      <td>6.3</td>
-      <td>2.5</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>148</td>
-      <td>6.5</td>
-      <td>3.0</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>149</td>
-      <td>6.2</td>
-      <td>3.4</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>150</td>
-      <td>5.9</td>
-      <td>3.0</td>
-      <td>Iris-virginica</td>
-    </tr>
-  </tbody>
-</table>
-<p>150 rows × 4 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;_deepnote_execute_sql&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="data-dari-postgre-petallenght-petalwidth">
@@ -959,141 +730,42 @@ UPDATE public.&quot;Iris&quot; SET
 <h2>Tampilkan data dari Main dataframe<a class="headerlink" href="#tampilkan-data-dari-main-dataframe" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_main</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_main</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_main.head(len(df_main))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_main</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Id  SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm  \
+0      1            5.1           3.5            1.4           0.2   
+1      2            4.9           3.0            1.4           0.2   
+2      3            4.7           3.2            1.3           0.2   
+3      4            4.6           3.1            1.5           0.2   
+4      5            5.0           3.6            1.4           0.2   
+..   ...            ...           ...            ...           ...   
+145  146            6.7           3.0            5.2           2.3   
+146  147            6.3           2.5            5.0           1.9   
+147  148            6.5           3.0            5.2           2.0   
+148  149            6.2           3.4            5.4           2.3   
+149  150            5.9           3.0            5.1           1.8   
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+            Species  
+0       Iris-setosa  
+1       Iris-setosa  
+2       Iris-setosa  
+3       Iris-setosa  
+4       Iris-setosa  
+..              ...  
+145  Iris-virginica  
+146  Iris-virginica  
+147  Iris-virginica  
+148  Iris-virginica  
+149  Iris-virginica  
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Id</th>
-      <th>SepalLengthCm</th>
-      <th>SepalWidthCm</th>
-      <th>PetalLengthCm</th>
-      <th>PetalWidthCm</th>
-      <th>Species</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>146</td>
-      <td>6.7</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.3</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>147</td>
-      <td>6.3</td>
-      <td>2.5</td>
-      <td>5.0</td>
-      <td>1.9</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>148</td>
-      <td>6.5</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.0</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>149</td>
-      <td>6.2</td>
-      <td>3.4</td>
-      <td>5.4</td>
-      <td>2.3</td>
-      <td>Iris-virginica</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>150</td>
-      <td>5.9</td>
-      <td>3.0</td>
-      <td>5.1</td>
-      <td>1.8</td>
-      <td>Iris-virginica</td>
-    </tr>
-  </tbody>
-</table>
-<p>150 rows × 6 columns</p>
-</div></div></div>
+[150 rows x 6 columns]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="tampilkan-data-tabel-irisprepocessing">
@@ -1150,44 +822,20 @@ Name: count, dtype: int64
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sepal Length (cm)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/509d1e19c215e27b46834e7c0bb704547942f9ca1f35149618b7bd58864743e0.png" src="_images/509d1e19c215e27b46834e7c0bb704547942f9ca1f35149618b7bd58864743e0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_main</span><span class="p">[</span><span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_main</span><span class="p">[</span><span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of Sepal Width&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sepal Width (cm)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/e38fb7613d9a60851a1c2b125267b6efafc016db30a75cdda439e339453cb2d5.png" src="_images/e38fb7613d9a60851a1c2b125267b6efafc016db30a75cdda439e339453cb2d5.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_main</span><span class="p">[</span><span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_main</span><span class="p">[</span><span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of Petal Length&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Petal Length (cm)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/2595a6ff2ad0d02edfce8ea8950795268a887cef74649af3e7f8144062f58e7d.png" src="_images/2595a6ff2ad0d02edfce8ea8950795268a887cef74649af3e7f8144062f58e7d.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_main</span><span class="p">[</span><span class="s1">&#39;PetalWidthCm&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_main</span><span class="p">[</span><span class="s1">&#39;PetalWidthCm&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of Petal Width&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Petal Width (cm)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
@@ -1196,16 +844,29 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/509d1e19c215e27b46834e7c0bb704547942f9ca1f35149618b7bd58864743e0.png" src="_images/509d1e19c215e27b46834e7c0bb704547942f9ca1f35149618b7bd58864743e0.png" />
+<img alt="_images/e38fb7613d9a60851a1c2b125267b6efafc016db30a75cdda439e339453cb2d5.png" src="_images/e38fb7613d9a60851a1c2b125267b6efafc016db30a75cdda439e339453cb2d5.png" />
+<img alt="_images/2595a6ff2ad0d02edfce8ea8950795268a887cef74649af3e7f8144062f58e7d.png" src="_images/2595a6ff2ad0d02edfce8ea8950795268a887cef74649af3e7f8144062f58e7d.png" />
 <img alt="_images/bf0883e282713b7517dc25416283f8248ab5e8f95afa12ae294292cde0511495.png" src="_images/bf0883e282713b7517dc25416283f8248ab5e8f95afa12ae294292cde0511495.png" />
 </div>
 </div>
 </section>
 <section id="visualisasi-hubungan-antara-sepal-dan-petal-pad-iris">
 <h2>Visualisasi hubungan antara sepal dan petal pad iris<a class="headerlink" href="#visualisasi-hubungan-antara-sepal-dan-petal-pad-iris" title="Link to this heading">#</a></h2>
-<p>Visualisasi Sepal dan Petal Features adalah tentang memvisualisasikan hubungan antara berbagai fitur bunga iris, baik sepal (kelopak) maupun petal (mahkota). Data yang umumnya digunakan untuk visualisasi ini berasal dari Iris dataset, yang mencakup empat fitur numerik: sepal length, sepal width, petal length, dan petal width.
-</p>
-<p>Visualisasi ini berguna untuk memahami bagaimana fitur-fitur ini berkorelasi satu sama lain dan bagaimana mereka dapat digunakan untuk membedakan antara kelas bunga iris yang berbeda (setosa, versicolor, dan virginica).
-</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Visualisasi</span> <span class="n">Sepal</span> <span class="n">dan</span> <span class="n">Petal</span> <span class="n">Features</span> <span class="n">adalah</span> <span class="n">tentang</span> <span class="n">memvisualisasikan</span> <span class="n">hubungan</span> <span class="n">antara</span> <span class="n">berbagai</span> <span class="n">fitur</span> <span class="n">bunga</span> <span class="n">iris</span><span class="p">,</span> <span class="n">baik</span> <span class="n">sepal</span> <span class="p">(</span><span class="n">kelopak</span><span class="p">)</span> <span class="n">maupun</span> <span class="n">petal</span> <span class="p">(</span><span class="n">mahkota</span><span class="p">)</span><span class="o">.</span> <span class="n">Data</span> <span class="n">yang</span> <span class="n">umumnya</span> <span class="n">digunakan</span> <span class="n">untuk</span> <span class="n">visualisasi</span> <span class="n">ini</span> <span class="n">berasal</span> <span class="n">dari</span> <span class="n">Iris</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">yang</span> <span class="n">mencakup</span> <span class="n">empat</span> <span class="n">fitur</span> <span class="n">numerik</span><span class="p">:</span> <span class="n">sepal</span> <span class="n">length</span><span class="p">,</span> <span class="n">sepal</span> <span class="n">width</span><span class="p">,</span> <span class="n">petal</span> <span class="n">length</span><span class="p">,</span> <span class="n">dan</span> <span class="n">petal</span> <span class="n">width</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Visualisasi</span> <span class="n">ini</span> <span class="n">berguna</span> <span class="n">untuk</span> <span class="n">memahami</span> <span class="n">bagaimana</span> <span class="n">fitur</span><span class="o">-</span><span class="n">fitur</span> <span class="n">ini</span> <span class="n">berkorelasi</span> <span class="n">satu</span> <span class="n">sama</span> <span class="n">lain</span> <span class="n">dan</span> <span class="n">bagaimana</span> <span class="n">mereka</span> <span class="n">dapat</span> <span class="n">digunakan</span> <span class="n">untuk</span> <span class="n">membedakan</span> <span class="n">antara</span> <span class="n">kelas</span> <span class="n">bunga</span> <span class="n">iris</span> <span class="n">yang</span> <span class="n">berbeda</span> <span class="p">(</span><span class="n">setosa</span><span class="p">,</span> <span class="n">versicolor</span><span class="p">,</span> <span class="n">dan</span> <span class="n">virginica</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>Sekarang mari kita lihat Visualisasi hubungan Sepal dan Petal</p></li>
 </ul>
@@ -1219,14 +880,35 @@ Name: count, dtype: int64
 <div class="cell_output docutils container">
 <img alt="_images/3b94de3cd0dfaa829a2586cd74ba203457981484ac62894e7215d95afb019f85.png" src="_images/3b94de3cd0dfaa829a2586cd74ba203457981484ac62894e7215d95afb019f85.png" />
 </div>
-<p>Perhatikan Pola Scatter Plot: Perhatikan pola titik-titik data dalam scatter plot. Lihat apakah ada pola yang jelas atau pemisahan antara titik-titik data dari setiap kelas bunga iris. Misalnya, apakah ada cluster titik-titik data yang terpisah dengan jelas untuk setiap kelas?
-</p>
-<p>Analisis Distribusi Univariat: Diagonal utama dari pair plot menunjukkan distribusi univariat untuk setiap fitur. Perhatikan apakah ada perbedaan signifikan dalam distribusi fitur antara kelas-kelas bunga iris. Misalnya, apakah ada perbedaan dalam rentang atau kepadatan distribusi untuk fitur-fitur tertentu?
-</p>
-<p>Perhatikan Hubungan Antar Fitur: Perhatikan pola hubungan antara berbagai fitur. Misalnya, apakah ada hubungan linier antara sepal length dan sepal width? Atau, apakah ada pola hubungan yang kompleks antara petal length dan petal width?
-</p>
-<p>Analisis Outlier: Perhatikan adanya outlier atau titik-titik data yang terpisah jauh dari pola umum dalam scatter plot. Outlier ini bisa menjadi penting karena mereka dapat menunjukkan kasus-kasus khusus atau kesalahan dalam data.
-</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Perhatikan</span> <span class="n">Pola</span> <span class="n">Scatter</span> <span class="n">Plot</span><span class="p">:</span> <span class="n">Perhatikan</span> <span class="n">pola</span> <span class="n">titik</span><span class="o">-</span><span class="n">titik</span> <span class="n">data</span> <span class="n">dalam</span> <span class="n">scatter</span> <span class="n">plot</span><span class="o">.</span> <span class="n">Lihat</span> <span class="n">apakah</span> <span class="n">ada</span> <span class="n">pola</span> <span class="n">yang</span> <span class="n">jelas</span> <span class="n">atau</span> <span class="n">pemisahan</span> <span class="n">antara</span> <span class="n">titik</span><span class="o">-</span><span class="n">titik</span> <span class="n">data</span> <span class="n">dari</span> <span class="n">setiap</span> <span class="n">kelas</span> <span class="n">bunga</span> <span class="n">iris</span><span class="o">.</span> <span class="n">Misalnya</span><span class="p">,</span> <span class="n">apakah</span> <span class="n">ada</span> <span class="n">cluster</span> <span class="n">titik</span><span class="o">-</span><span class="n">titik</span> <span class="n">data</span> <span class="n">yang</span> <span class="n">terpisah</span> <span class="n">dengan</span> <span class="n">jelas</span> <span class="n">untuk</span> <span class="n">setiap</span> kelas<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Analisis</span> <span class="n">Distribusi</span> <span class="n">Univariat</span><span class="p">:</span> <span class="n">Diagonal</span> <span class="n">utama</span> <span class="n">dari</span> <span class="n">pair</span> <span class="n">plot</span> <span class="n">menunjukkan</span> <span class="n">distribusi</span> <span class="n">univariat</span> <span class="n">untuk</span> <span class="n">setiap</span> <span class="n">fitur</span><span class="o">.</span> <span class="n">Perhatikan</span> <span class="n">apakah</span> <span class="n">ada</span> <span class="n">perbedaan</span> <span class="n">signifikan</span> <span class="n">dalam</span> <span class="n">distribusi</span> <span class="n">fitur</span> <span class="n">antara</span> <span class="n">kelas</span><span class="o">-</span><span class="n">kelas</span> <span class="n">bunga</span> <span class="n">iris</span><span class="o">.</span> <span class="n">Misalnya</span><span class="p">,</span> <span class="n">apakah</span> <span class="n">ada</span> <span class="n">perbedaan</span> <span class="n">dalam</span> <span class="n">rentang</span> <span class="n">atau</span> <span class="n">kepadatan</span> <span class="n">distribusi</span> <span class="n">untuk</span> <span class="n">fitur</span><span class="o">-</span><span class="n">fitur</span> tertentu<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Perhatikan</span> <span class="n">Hubungan</span> <span class="n">Antar</span> <span class="n">Fitur</span><span class="p">:</span> <span class="n">Perhatikan</span> <span class="n">pola</span> <span class="n">hubungan</span> <span class="n">antara</span> <span class="n">berbagai</span> <span class="n">fitur</span><span class="o">.</span> <span class="n">Misalnya</span><span class="p">,</span> <span class="n">apakah</span> <span class="n">ada</span> <span class="n">hubungan</span> <span class="n">linier</span> <span class="n">antara</span> <span class="n">sepal</span> <span class="n">length</span> <span class="n">dan</span> <span class="n">sepal</span> <span class="n">width</span><span class="err">?</span> <span class="n">Atau</span><span class="p">,</span> <span class="n">apakah</span> <span class="n">ada</span> <span class="n">pola</span> <span class="n">hubungan</span> <span class="n">yang</span> <span class="n">kompleks</span> <span class="n">antara</span> <span class="n">petal</span> <span class="n">length</span> <span class="n">dan</span> <span class="n">petal</span> width<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Analisis</span> <span class="n">Outlier</span><span class="p">:</span> <span class="n">Perhatikan</span> <span class="n">adanya</span> <span class="n">outlier</span> <span class="n">atau</span> <span class="n">titik</span><span class="o">-</span><span class="n">titik</span> <span class="n">data</span> <span class="n">yang</span> <span class="n">terpisah</span> <span class="n">jauh</span> <span class="n">dari</span> <span class="n">pola</span> <span class="n">umum</span> <span class="n">dalam</span> <span class="n">scatter</span> <span class="n">plot</span><span class="o">.</span> <span class="n">Outlier</span> <span class="n">ini</span> <span class="n">bisa</span> <span class="n">menjadi</span> <span class="n">penting</span> <span class="n">karena</span> <span class="n">mereka</span> <span class="n">dapat</span> <span class="n">menunjukkan</span> <span class="n">kasus</span><span class="o">-</span><span class="n">kasus</span> <span class="n">khusus</span> <span class="n">atau</span> <span class="n">kesalahan</span> <span class="n">dalam</span> <span class="n">data</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="kualitas-data">
 <h2>Kualitas Data :<a class="headerlink" href="#kualitas-data" title="Link to this heading">#</a></h2>
@@ -1374,8 +1056,12 @@ Name: count, dtype: int64
 <p>150 rows × 6 columns</p>
 </div></div></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dalam tabel disamping terlihat jelas ada mising values 
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dalam</span> <span class="n">tabel</span> <span class="n">disamping</span> <span class="n">terlihat</span> <span class="n">jelas</span> <span class="n">ada</span> <span class="n">mising</span> <span class="n">values</span> 
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="menampilkan-missing-values">
@@ -1510,8 +1196,12 @@ Index([&#39;SepalLengthCm&#39;, &#39;Species&#39;], dtype=&#39;object&#39;)
 <h1>PREPOCESSING DATA<a class="headerlink" href="#prepocessing-data" title="Link to this heading">#</a></h1>
 <section id="cleaning-data">
 <h2>Cleaning data<a class="headerlink" href="#cleaning-data" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Kita menggunakan spesies sebagai acuan, jadi column species yang bernilai null akan didrop
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kita</span> <span class="n">menggunakan</span> <span class="n">spesies</span> <span class="n">sebagai</span> <span class="n">acuan</span><span class="p">,</span> <span class="n">jadi</span> <span class="n">column</span> <span class="n">species</span> <span class="n">yang</span> <span class="n">bernilai</span> <span class="n">null</span> <span class="n">akan</span> <span class="n">didrop</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1795,12 +1485,22 @@ Index([&#39;SepalLengthCm&#39;, &#39;Species&#39;], dtype=&#39;object&#39;)
 </section>
 <section id="imputasi-missing-values">
 <h2>Imputasi missing values<a class="headerlink" href="#imputasi-missing-values" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Setelah mengetahui missing value ada dimana saja mari kita coba beberapa metode untuk mengisi missing value tersebut
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Setelah</span> <span class="n">mengetahui</span> <span class="n">missing</span> <span class="n">value</span> <span class="n">ada</span> <span class="n">dimana</span> <span class="n">saja</span> <span class="n">mari</span> <span class="n">kita</span> <span class="n">coba</span> <span class="n">beberapa</span> <span class="n">metode</span> <span class="n">untuk</span> <span class="n">mengisi</span> <span class="n">missing</span> <span class="n">value</span> <span class="n">tersebut</span>
 </pre></div>
+</div>
+</div>
 </div>
 <section id="dengan-rata-rata">
 <h3>Dengan rata-rata<a class="headerlink" href="#dengan-rata-rata" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">(\Huge \bar{X} = \sum_{i=1}^{n} \frac{X_i}{n}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="err">$$</span>\<span class="n">Huge</span> \<span class="n">bar</span><span class="p">{</span><span class="n">X</span><span class="p">}</span> <span class="o">=</span> \<span class="n">sum_</span><span class="p">{</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">}</span><span class="o">^</span><span class="p">{</span><span class="n">n</span><span class="p">}</span> \<span class="n">frac</span><span class="p">{</span><span class="n">X_i</span><span class="p">}{</span><span class="n">n</span><span class="p">}</span><span class="err">$$</span>
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>pertama dengan menggunakan metode rata-rata kita cari tahu dulu rata-rata untuk sepalLenght pada setiap species</p></li>
 </ul>
@@ -1976,16 +1676,25 @@ Name: SepalLengthCm, dtype: float64
 </section>
 <section id="dengan-knn">
 <h3>Dengan KNN<a class="headerlink" href="#dengan-knn" title="Link to this heading">#</a></h3>
-<p> K-nearest neighbours (KNN) adalah jenis algoritma pembelajaran terawasi yang digunakan untuk regresi dan klasifikasi. KNN mencoba memprediksi kelas yang tepat untuk data uji dengan menghitung jarak antara data uji dan seluruh titik latih. Kemudian pilih jumlah K titik yang mendekati data uji. Algoritma KNN menghitung probabilitas data uji yang termasuk dalam kelas data pelatihan &#39;K&#39; dan kelas yang memiliki probabilitas tertinggi akan dipilih. Dalam kasus regresi, nilainya adalah rata-rata dari titik pelatihan &#39;K&#39; yang dipilih.
-</p>
-<img src="Img/image-20240314-003129.png" width="" align="" /><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Cara kerja K-NN dapat dijelaskan berdasarkan algoritma di bawah ini:
-Langkah-1: Pilih nomor K tetangga
-Langkah-2: Hitung jarak Euclidean dari K jumlah tetangga
-Langkah-3: Ambil K tetangga terdekat sesuai jarak Euclidean yang dihitung.
-Langkah-4: Di antara k tetangga ini, hitung jumlah titik data di setiap kategori.
-Langkah-5: Tetapkan titik data baru ke kategori yang jumlah tetangganya maksimum.
-Langkah-6: Model kita sudah siap.
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="o">-</span><span class="n">nearest</span> <span class="n">neighbours</span> <span class="p">(</span><span class="n">KNN</span><span class="p">)</span> <span class="n">adalah</span> <span class="n">jenis</span> <span class="n">algoritma</span> <span class="n">pembelajaran</span> <span class="n">terawasi</span> <span class="n">yang</span> <span class="n">digunakan</span> <span class="n">untuk</span> <span class="n">regresi</span> <span class="n">dan</span> <span class="n">klasifikasi</span><span class="o">.</span> <span class="n">KNN</span> <span class="n">mencoba</span> <span class="n">memprediksi</span> <span class="n">kelas</span> <span class="n">yang</span> <span class="n">tepat</span> <span class="n">untuk</span> <span class="n">data</span> <span class="n">uji</span> <span class="n">dengan</span> <span class="n">menghitung</span> <span class="n">jarak</span> <span class="n">antara</span> <span class="n">data</span> <span class="n">uji</span> <span class="n">dan</span> <span class="n">seluruh</span> <span class="n">titik</span> <span class="n">latih</span><span class="o">.</span> <span class="n">Kemudian</span> <span class="n">pilih</span> <span class="n">jumlah</span> <span class="n">K</span> <span class="n">titik</span> <span class="n">yang</span> <span class="n">mendekati</span> <span class="n">data</span> <span class="n">uji</span><span class="o">.</span> <span class="n">Algoritma</span> <span class="n">KNN</span> <span class="n">menghitung</span> <span class="n">probabilitas</span> <span class="n">data</span> <span class="n">uji</span> <span class="n">yang</span> <span class="n">termasuk</span> <span class="n">dalam</span> <span class="n">kelas</span> <span class="n">data</span> <span class="n">pelatihan</span> <span class="s1">&#39;K&#39;</span> <span class="n">dan</span> <span class="n">kelas</span> <span class="n">yang</span> <span class="n">memiliki</span> <span class="n">probabilitas</span> <span class="n">tertinggi</span> <span class="n">akan</span> <span class="n">dipilih</span><span class="o">.</span> <span class="n">Dalam</span> <span class="n">kasus</span> <span class="n">regresi</span><span class="p">,</span> <span class="n">nilainya</span> <span class="n">adalah</span> <span class="n">rata</span><span class="o">-</span><span class="n">rata</span> <span class="n">dari</span> <span class="n">titik</span> <span class="n">pelatihan</span> <span class="s1">&#39;K&#39;</span> <span class="n">yang</span> <span class="n">dipilih</span><span class="o">.</span>
 </pre></div>
+</div>
+</div>
+</div>
+<img src="Img/image-20240314-003129.png" width="" align="" /><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">Cara</span> <span class="n">kerja</span> <span class="n">K</span><span class="o">-</span><span class="n">NN</span> <span class="n">dapat</span> <span class="n">dijelaskan</span> <span class="n">berdasarkan</span> <span class="n">algoritma</span> <span class="n">di</span> <span class="n">bawah</span> <span class="n">ini</span><span class="p">:</span>
+    <span class="n">Langkah</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">Pilih</span> <span class="n">nomor</span> <span class="n">K</span> <span class="n">tetangga</span>
+    <span class="n">Langkah</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span> <span class="n">Hitung</span> <span class="n">jarak</span> <span class="n">Euclidean</span> <span class="n">dari</span> <span class="n">K</span> <span class="n">jumlah</span> <span class="n">tetangga</span>
+    <span class="n">Langkah</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span> <span class="n">Ambil</span> <span class="n">K</span> <span class="n">tetangga</span> <span class="n">terdekat</span> <span class="n">sesuai</span> <span class="n">jarak</span> <span class="n">Euclidean</span> <span class="n">yang</span> <span class="n">dihitung</span><span class="o">.</span>
+    <span class="n">Langkah</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span> <span class="n">Di</span> <span class="n">antara</span> <span class="n">k</span> <span class="n">tetangga</span> <span class="n">ini</span><span class="p">,</span> <span class="n">hitung</span> <span class="n">jumlah</span> <span class="n">titik</span> <span class="n">data</span> <span class="n">di</span> <span class="n">setiap</span> <span class="n">kategori</span><span class="o">.</span>
+    <span class="n">Langkah</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span> <span class="n">Tetapkan</span> <span class="n">titik</span> <span class="n">data</span> <span class="n">baru</span> <span class="n">ke</span> <span class="n">kategori</span> <span class="n">yang</span> <span class="n">jumlah</span> <span class="n">tetangganya</span> <span class="n">maksimum</span><span class="o">.</span>
+    <span class="n">Langkah</span><span class="o">-</span><span class="mi">6</span><span class="p">:</span> <span class="n">Model</span> <span class="n">kita</span> <span class="n">sudah</span> <span class="n">siap</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>Pertama kita pilih jumlah tetangganya,misalkan 5</p></li>
@@ -1993,13 +1702,23 @@ Langkah-6: Model kita sudah siap.
 <ul class="simple">
 <li><p>Menghitung Jarak</p></li>
 </ul>
-<p >Jarak Euclidean: Jarak Euclidean dihitung sebagai akar kuadrat dari jumlah selisih kuadrat antara titik baru (x) dan titik yang sudah ada (y).
-</p>
-<p>Jarak Manhattan: Ini adalah jarak antara vektor-vektor nyata dengan menggunakan jumlah selisih mutlaknya.
-</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">Jarak</span> <span class="n">Euclidean</span><span class="p">:</span> <span class="n">Jarak</span> <span class="n">Euclidean</span> <span class="n">dihitung</span> <span class="n">sebagai</span> <span class="n">akar</span> <span class="n">kuadrat</span> <span class="n">dari</span> <span class="n">jumlah</span> <span class="n">selisih</span> <span class="n">kuadrat</span> <span class="n">antara</span> <span class="n">titik</span> <span class="n">baru</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">dan</span> <span class="n">titik</span> <span class="n">yang</span> <span class="n">sudah</span> <span class="n">ada</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">Jarak</span> <span class="n">Manhattan</span><span class="p">:</span> <span class="n">Ini</span> <span class="n">adalah</span> <span class="n">jarak</span> <span class="n">antara</span> <span class="n">vektor</span><span class="o">-</span><span class="n">vektor</span> <span class="n">nyata</span> <span class="n">dengan</span> <span class="n">menggunakan</span> <span class="n">jumlah</span> <span class="n">selisih</span> <span class="n">mutlaknya</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
 <img src="Img/image-20240314-103715.png" width="" align="" /><p>Selanjutnya kita akan menghitung jarak Euclidean antar titik data. Jarak Euclidean adalah jarak antara dua titik, yang telah kita pelajari dalam geometri. Ini dapat dihitung sebagai:</p>
-<img src="Img/image-20240318-235055.png" width="25%" align="" /><img src="Img/image-20240318-234932.png" width="25%" align="" /><p>Dengan menghitung jarak Euclidean kita mendapatkan tetangga terdekat, yaitu tiga tetangga terdekat pada kategori A dan dua tetangga terdekat pada kategori B. Perhatikan gambar di bawah ini:</p>
-<img src="Img/image-20240318-235138.png" width="25%" align="" /><ul class="simple">
+<img src="Img/image-20240318-235055.png" width="75%" align="center" /><img src="Img/image-20240318-234932.png" width="75%" align="center" /><p>Dengan menghitung jarak Euclidean kita mendapatkan tetangga terdekat, yaitu tiga tetangga terdekat pada kategori A dan dua tetangga terdekat pada kategori B. Perhatikan gambar di bawah ini:</p>
+<img src="Img/image-20240318-235138.png" width="50%" align="center" /><ul class="simple">
 <li><p>KNN dengan library Sklearn pada data iris</p></li>
 </ul>
 <div class="cell docutils container">
@@ -2200,7 +1919,7 @@ Langkah-6: Model kita sudah siap.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
 
-<span class="c1">#disini saya sembunyikan username dan password koneksi saya</span>
+<span class="c1">#code asli disembunyikan</span>
 <span class="n">connection_str</span> <span class="o">=</span> <span class="s2">&quot;mysql+pymysql://username:password@hostname:port/database&quot;</span>
 
 
@@ -2381,47 +2100,59 @@ Langkah-6: Model kita sudah siap.
 <section id="menghitung-manual-local-outlier">
 <h3>Menghitung Manual Local Outlier<a class="headerlink" href="#menghitung-manual-local-outlier" title="Link to this heading">#</a></h3>
 <p>data contoh dengan tipe numerik 3 fitur , jumlah data 10, K = 3, p=2 (euclidian)</p>
-<img src="Img/image-20240319-190555.png" width="" align="" /><ul class="simple">
+<img src="Img/image-20240319-190555.png" width="" align="center" /><ul class="simple">
 <li><p>step 1 hitung jarak antar setiap data dengan euclidean</p></li>
 </ul>
-<img src="Img/image-20240319-191147.png" width="" align="" /><ul class="simple">
+<img src="Img/image-20240319-191147.png" width="" align="center" /><ul class="simple">
 <li><p>step 2 Menentukan k-Nearest Neighbors (k= 3)</p></li>
 </ul>
-<img src="Img/image-20240319-200549.png" width="" align="" /><ul class="simple">
+<img src="Img/image-20240319-200549.png" width="" align="center" /><ul class="simple">
 <li><p>step 3 Menghitung Local Reachability Density (LRD)</p></li>
 </ul>
 <p>hitung RD dengan rumus :</p>
-<img src="Img/image-20240319-201328.png" width="50%" align="" /><p>hitung LRD dengan rumus</p>
-<img src="Img/image-20240319-201415.png" width="50%" align="" /><p>misalkan untuk yang RD dan LRD A :</p>
-<p>RD(F) = max(d(F, A), k-distance(F))
-d(F, A) = √5 ≈ 2.24
-k-distance(F) = √11 ≈ 3.32
-RD(F) = max(2.24, 3.32) = 3.32
-RD(B) = max(d(B, A), k-distance(B))
-d(B, A) = √10 ≈ 3.16
-k-distance(B) = √11 ≈ 3.32
-RD(B) = max(3.16, 3.32) = 3.32
-RD(I) = max(d(I, A), k-distance(I))
-d(I, A) = √11 ≈ 3.32
-k-distance(I) = √11 ≈ 3.32
-RD(I) = max(3.32, 3.32) = 3.32
-LRD(A) = 1 / ((1/3.32) + (1/3.32) + (1/3.32))
-LRD(A) ≈ 0.90</p>
+<img src="Img/image-20240319-201328.png" width="50%" align="center" /><p>hitung LRD dengan rumus</p>
+<img src="Img/image-20240319-201415.png" width="50%" align="center" /><p>misalkan untuk yang RD dan LRD A :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RD</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">d</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span> <span class="n">k</span><span class="o">-</span><span class="n">distance</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
+    <span class="n">d</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="err">√</span><span class="mi">5</span> <span class="err">≈</span> <span class="mf">2.24</span>
+    <span class="n">k</span><span class="o">-</span><span class="n">distance</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> <span class="o">=</span> <span class="err">√</span><span class="mi">11</span> <span class="err">≈</span> <span class="mf">3.32</span>
+    <span class="n">RD</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">2.24</span><span class="p">,</span> <span class="mf">3.32</span><span class="p">)</span> <span class="o">=</span> <span class="mf">3.32</span>
+<span class="n">RD</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">d</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span> <span class="n">k</span><span class="o">-</span><span class="n">distance</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+    <span class="n">d</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="err">√</span><span class="mi">10</span> <span class="err">≈</span> <span class="mf">3.16</span>
+    <span class="n">k</span><span class="o">-</span><span class="n">distance</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">=</span> <span class="err">√</span><span class="mi">11</span> <span class="err">≈</span> <span class="mf">3.32</span>
+    <span class="n">RD</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">3.16</span><span class="p">,</span> <span class="mf">3.32</span><span class="p">)</span> <span class="o">=</span> <span class="mf">3.32</span>
+<span class="n">RD</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">d</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span> <span class="n">k</span><span class="o">-</span><span class="n">distance</span><span class="p">(</span><span class="n">I</span><span class="p">))</span>
+    <span class="n">d</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="err">√</span><span class="mi">11</span> <span class="err">≈</span> <span class="mf">3.32</span>
+    <span class="n">k</span><span class="o">-</span><span class="n">distance</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="o">=</span> <span class="err">√</span><span class="mi">11</span> <span class="err">≈</span> <span class="mf">3.32</span>
+    <span class="n">RD</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">3.32</span><span class="p">,</span> <span class="mf">3.32</span><span class="p">)</span> <span class="o">=</span> <span class="mf">3.32</span>
+<span class="n">LRD</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.32</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.32</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.32</span><span class="p">))</span>
+<span class="n">LRD</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">0.90</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>maka dengan perhitungan yang sama ditemukan LRD untuk setiap titik</p>
-<img src="Img/image-20240319-201132.png" width="" align="" /><ul class="simple">
+<img src="Img/image-20240319-201132.png" width="actual" align="center" /><ul class="simple">
 <li><p>Maka setelah semua LRD ditemukan saatnya menhitung LOCAL OUTLIER FACTOR dengan rumus</p></li>
 </ul>
-<img src="Img/image-20240319-201719.png" width="" align="" /><p>berikut hasil LOF untuk setiap titik</p>
-<p>LOF(A) ≈ 1.02
-LOF(B) ≈ 1.02
-LOF(C) ≈ 0.99
-LOF(D) ≈ 1.08
-LOF(E) ≈ 1.10
-LOF(F) ≈ 0.82
-LOF(G) ≈ 0.93
-LOF(H) ≈ 0.97
-LOF(I) ≈ 0.82
-LOF(J) ≈ 0.95</p>
+<img src="Img/image-20240319-201719.png" width="" align="center" /><p>berikut hasil LOF untuk setiap titik</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LOF</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">1.02</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">1.02</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">0.99</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">D</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">1.08</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">E</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">1.10</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">0.82</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">0.93</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">0.97</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">0.82</span><span class="p">,</span>
+<span class="n">LOF</span><span class="p">(</span><span class="n">J</span><span class="p">)</span> <span class="err">≈</span> <span class="mf">0.95</span><span class="p">,</span>
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>Sekarang ditemukan bahwa top 1 outlier yaitu ada pada titik E (1.10)</p></li>
 </ul>
@@ -2429,29 +2160,12 @@ LOF(J) ≈ 0.95</p>
 <section id="implementasi-lof-pada-dataaset-iris">
 <h3>Implementasi LOF pada dataaset iris<a class="headerlink" href="#implementasi-lof-pada-dataaset-iris" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>misalkan kita siapkan data dummy dulu import ke dataframe</p></li>
+<li><p>Step 1 : Ambil data iris dari tabel IrisOutlier pada mysql lalu masukan ke dataframe</p></li>
 </ul>
-<img src="Img/image-20240319-203912.png" width="" align="" /><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data tabel</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">6.2</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">5.9</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">,</span> <span class="mf">7.4</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span>
-    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">9.1</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">6.3</span><span class="p">],</span>
-    <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">6.9</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">8.7</span><span class="p">,</span> <span class="mf">5.9</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">7.4</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
-<span class="p">}</span>
-
-<span class="c1"># Daftar nama titik</span>
-<span class="n">titik</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">]</span>
-
-<span class="c1"># Membuat DataFrame menggunakan Pandas</span>
-<span class="n">df_outlier</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">titik</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM df_outlier&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_DEEPNOTE_DATAFRAME_SQL&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_outlier</span> <span class="o">=</span> <span class="n">_deepnote_execute_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM IrisOutlier&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL_99F1D1AF_854C_4441_9EAD_3F2D68CEC4E9&#39;</span><span class="p">,</span> <span class="n">audit_sql_comment</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sql_cache_mode</span><span class="o">=</span><span class="s1">&#39;cache_disabled&#39;</span><span class="p">)</span>
+<span class="n">df_outlier</span>
 </pre></div>
 </div>
 </div>
@@ -2474,105 +2188,131 @@ LOF(J) ≈ 0.95</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
+      <th>Id</th>
+      <th>SepalLengthCm</th>
+      <th>SepalWidthCm</th>
+      <th>PetalLengthCm</th>
+      <th>PetalWidthCm</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>6.2</td>
-      <td>1.1</td>
-      <td>1.9</td>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5.3</td>
-      <td>9.1</td>
-      <td>8.4</td>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2.9</td>
-      <td>3.8</td>
-      <td>7.0</td>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>5.4</td>
-      <td>0.8</td>
-      <td>2.7</td>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3.7</td>
-      <td>1.8</td>
-      <td>3.4</td>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>5.2</td>
-      <td>100.0</td>
-      <td>6.9</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>3.4</td>
-      <td>4.0</td>
-      <td>8.1</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>3.2</td>
-      <td>4.8</td>
-      <td>8.7</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>5.9</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>8.1</td>
+      <th>145</th>
+      <td>146</td>
+      <td>6.7</td>
       <td>3.0</td>
-      <td>5.5</td>
+      <td>5.2</td>
+      <td>2.3</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>5.9</td>
-      <td>3.3</td>
-      <td>0.1</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>9.5</td>
-      <td>8.3</td>
-      <td>7.4</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>7.4</td>
-      <td>2.9</td>
-      <td>3.9</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>1.7</td>
-      <td>2.5</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>4.0</td>
+      <th>146</th>
+      <td>147</td>
       <td>6.3</td>
-      <td>4.0</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>148</td>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>149</td>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>150</td>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
     </tr>
   </tbody>
 </table>
+<p>150 rows × 5 columns</p>
 </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_outlier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Id  SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm
+0      1            5.1           3.5            1.4           0.2
+1      2            4.9           3.0            1.4           0.2
+2      3            4.7           3.2            1.3           0.2
+3      4            4.6           3.1            1.5           0.2
+4      5            5.0           3.6            1.4           0.2
+..   ...            ...           ...            ...           ...
+145  146            6.7           3.0            5.2           2.3
+146  147            6.3           2.5            5.0           1.9
+147  148            6.5           3.0            5.2           2.0
+148  149            6.2           3.4            5.4           2.3
+149  150            5.9           3.0            5.1           1.8
+
+[150 rows x 5 columns]
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>Pediksi outlier dengan Sklearn Library</p></li>
@@ -2598,9 +2338,9 @@ LOF(J) ≈ 0.95</p>
 
 <span class="c1"># Plot non-outliers</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter3d</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">non_outliers</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">non_outliers</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">z</span><span class="o">=</span><span class="n">non_outliers</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">],</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">non_outliers</span><span class="p">[</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">non_outliers</span><span class="p">[</span><span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">],</span>
+    <span class="n">z</span><span class="o">=</span><span class="n">non_outliers</span><span class="p">[</span><span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">],</span>
     <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>
     <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Non-Outlier&#39;</span>
@@ -2608,9 +2348,9 @@ LOF(J) ≈ 0.95</p>
 
 <span class="c1"># Plot outliers</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter3d</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
-    <span class="n">z</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">],</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">],</span>
+    <span class="n">z</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">],</span>
     <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>
     <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Outlier&#39;</span>
@@ -2619,8 +2359,8 @@ LOF(J) ≈ 0.95</p>
 <span class="c1"># Menambahkan label titik</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">titik</span><span class="p">)):</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">df_outlier</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">df_outlier</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;y&#39;</span><span class="p">],</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">df_outlier</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">df_outlier</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">],</span>
         <span class="n">text</span><span class="o">=</span><span class="n">titik</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
         <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span>
@@ -2628,9 +2368,9 @@ LOF(J) ≈ 0.95</p>
 <span class="c1"># Mengatur layout</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">scene</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span>
-        <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span>
-        <span class="n">zaxis_title</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span>
+        <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">,</span>
+        <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">,</span>
+        <span class="n">zaxis_title</span><span class="o">=</span><span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">,</span>
         <span class="n">aspectmode</span><span class="o">=</span><span class="s1">&#39;cube&#39;</span>
     <span class="p">),</span>
     <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Data Visualization with Outliers&#39;</span>
@@ -2646,9 +2386,9 @@ LOF(J) ≈ 0.95</p>
 <head><meta charset="utf-8" /></head>
 <body>
     <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>                <div id="517bd9f6-0aeb-463e-9850-a023928e3437" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("517bd9f6-0aeb-463e-9850-a023928e3437")) {                    Plotly.newPlot(                        "517bd9f6-0aeb-463e-9850-a023928e3437",                        [{"marker":{"color":"blue","size":10},"mode":"markers","name":"Non-Outlier","x":[6.2,2.9,5.4,3.7,3.4,3.2,4.2,8.1,5.9,9.5,7.4,1.7],"y":[1.1,3.8,0.8,1.8,4.0,4.8,3.2,3.0,3.3,8.3,2.9,2.5],"z":[1.9,7.0,2.7,3.4,8.1,8.7,5.9,5.5,0.1,7.4,3.9,7.0],"type":"scatter3d"},{"marker":{"color":"red","size":10,"symbol":"x"},"mode":"markers","name":"Outlier","x":[5.3,5.2,4.0],"y":[9.1,100.0,6.3],"z":[8.4,6.9,4.0],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"annotations":[{"showarrow":false,"text":"A","x":6.2,"y":1.1},{"showarrow":false,"text":"B","x":5.3,"y":9.1},{"showarrow":false,"text":"C","x":2.9,"y":3.8},{"showarrow":false,"text":"D","x":5.4,"y":0.8},{"showarrow":false,"text":"E","x":3.7,"y":1.8},{"showarrow":false,"text":"F","x":5.2,"y":100.0},{"showarrow":false,"text":"G","x":3.4,"y":4.0},{"showarrow":false,"text":"H","x":3.2,"y":4.8},{"showarrow":false,"text":"I","x":4.2,"y":3.2},{"showarrow":false,"text":"J","x":8.1,"y":3.0},{"showarrow":false,"text":"K","x":5.9,"y":3.3},{"showarrow":false,"text":"L","x":9.5,"y":8.3},{"showarrow":false,"text":"M","x":7.4,"y":2.9},{"showarrow":false,"text":"N","x":1.7,"y":2.5},{"showarrow":false,"text":"O","x":4.0,"y":6.3}],"scene":{"xaxis":{"title":{"text":"X"}},"yaxis":{"title":{"text":"Y"}},"zaxis":{"title":{"text":"Z"}},"aspectmode":"cube"},"title":{"text":"Data Visualization with Outliers"}},                        {"responsive": true}                    ).then(function(){
+        <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>                <div id="49fd0ad7-4c9d-4094-aa58-8674e8adfbd2" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("49fd0ad7-4c9d-4094-aa58-8674e8adfbd2")) {                    Plotly.newPlot(                        "49fd0ad7-4c9d-4094-aa58-8674e8adfbd2",                        [{"marker":{"color":"blue","size":10},"mode":"markers","name":"Non-Outlier","x":[5.1,4.9,4.7,4.6,5.0,5.4,4.6,5.0,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.1,4.6,5.1,4.8,5.0,5.0,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5.0,5.5,4.9,4.4,5.1,5.0,4.5,4.4,5.0,5.1,4.8,5.1,4.6,5.3,5.0,7.0,6.4,6.9,5.5,6.5,6.3,4.9,6.6,5.2,5.0,5.9,6.0,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6.0,5.7,5.5,5.5,5.8,6.0,5.4,6.0,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5.0,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6.0,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6.0,6.9,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"y":[3.5,3.0,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3.0,3.0,4.0,4.4,3.9,3.5,3.8,3.8,3.7,3.6,3.3,3.4,3.0,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.1,3.0,3.4,3.5,2.3,3.2,3.5,3.8,3.0,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,3.3,2.4,2.9,2.7,2.0,3.0,2.2,2.9,2.9,3.1,3.0,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3.0,2.8,3.0,2.9,2.6,2.4,2.4,2.7,2.7,3.0,3.4,3.1,2.3,3.0,2.5,2.6,3.0,2.6,2.3,2.7,3.0,2.9,2.9,2.5,2.8,3.3,2.7,3.0,2.9,3.0,3.0,2.5,2.9,2.5,3.6,3.2,2.7,3.0,2.5,2.8,3.2,3.0,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3.0,2.8,3.0,2.8,3.8,2.8,2.8,2.6,3.0,3.4,3.1,3.0,3.1,3.1,2.7,3.2,3.3,3.0,2.5,3.0,3.4,3.0],"z":[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.5,1.0,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.5,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4.0,4.6,4.7,3.3,4.6,3.9,3.5,4.2,4.0,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4.0,4.9,4.7,4.3,4.4,4.8,5.0,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4.0,4.4,4.6,4.0,3.3,4.2,4.2,4.2,4.3,3.0,4.1,6.0,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5.0,5.1,5.3,5.5,6.7,6.9,5.0,5.7,4.9,6.7,4.9,5.7,6.0,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.1,5.1,5.9,5.7,5.2,5.0,5.2,5.4,5.1],"type":"scatter3d"},{"marker":{"color":"red","size":10,"symbol":"x"},"mode":"markers","name":"Outlier","x":[5.4,17.0,6.7],"y":[15.0,2.8,3.1],"z":[1.7,4.5,19.0],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"annotations":[{"showarrow":false,"text":"A","x":5.1,"y":3.5},{"showarrow":false,"text":"B","x":4.9,"y":3.0},{"showarrow":false,"text":"C","x":4.7,"y":3.2},{"showarrow":false,"text":"D","x":4.6,"y":3.1},{"showarrow":false,"text":"E","x":5.0,"y":3.6},{"showarrow":false,"text":"F","x":5.4,"y":3.9},{"showarrow":false,"text":"G","x":4.6,"y":3.4},{"showarrow":false,"text":"H","x":5.0,"y":3.4},{"showarrow":false,"text":"I","x":4.4,"y":2.9},{"showarrow":false,"text":"J","x":4.9,"y":3.1},{"showarrow":false,"text":"K","x":5.4,"y":3.7},{"showarrow":false,"text":"L","x":4.8,"y":3.4},{"showarrow":false,"text":"M","x":4.8,"y":3.0},{"showarrow":false,"text":"N","x":4.3,"y":3.0},{"showarrow":false,"text":"O","x":5.8,"y":4.0}],"scene":{"xaxis":{"title":{"text":"SepalLengthCm"}},"yaxis":{"title":{"text":"SepalWidthCm"}},"zaxis":{"title":{"text":"PetalLengthCm"}},"aspectmode":"cube"},"title":{"text":"Data Visualization with Outliers"}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('517bd9f6-0aeb-463e-9850-a023928e3437');
+var gd = document.getElementById('49fd0ad7-4c9d-4094-aa58-8674e8adfbd2');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -2673,6 +2413,24 @@ if (outputEl) {{
                         })                };                            </script>        </div>
 </body>
 </html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outliers_df</span> <span class="o">=</span> <span class="n">df_outlier</span><span class="p">[</span><span class="n">df_outlier</span><span class="p">[</span><span class="s1">&#39;Outlier&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Outlier Data:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outliers_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outlier Data:
+      Id  SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm  Outlier
+20    21            5.4          15.0            1.7           0.2       -1
+55    56           17.0           2.8            4.5           1.3       -1
+140  141            6.7           3.1           19.0           2.4       -1
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -2746,7 +2504,7 @@ if (outputEl) {{
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#skenario">SKENARIO</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-value">Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mempersiapkan-missing-value">Mempersiapkan missing Value</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengumpulkan-data">MENGUMPULKAN DATA</a><ul class="visible nav section-nav flex-column">
